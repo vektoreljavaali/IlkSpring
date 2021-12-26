@@ -19,8 +19,8 @@ public interface IUrunRepository extends JpaRepository<Urun,Long> {
     // select * from tblurun where fiyat>?? and state=??
    List<Urun> findByFiyatGreaterThanAndStateEquals(double fiyat,int state);
 
-   @Query("select * from tblurun")
-   List<Urun> tumunugetirarkadas();
+  // @Query("select * from tblurun")
+   //List<Urun> tumunugetirarkadas();
 
 
 }
