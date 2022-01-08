@@ -15,6 +15,10 @@ public class UrunResponseDto {
         this.fiyat = fiyat;
     }
 
+    public UrunResponseDto() {
+
+    }
+
     public long getId() {
         return id;
     }

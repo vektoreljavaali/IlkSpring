@@ -1,10 +1,13 @@
 package com.vektorel.IlkSpring.service;
 
+import com.vektorel.IlkSpring.dto.response.UrunResponseDto;
+import com.vektorel.IlkSpring.mapper.UrunMapper;
 import com.vektorel.IlkSpring.repository.IUrunRepository;
 import com.vektorel.IlkSpring.repository.entity.Urun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +19,10 @@ public class UrunService {
     // Nesne türetilmek istenilen sınıfın üzerine Atutowired annotiasyonu eklenir.
     @Autowired
     IUrunRepository repository;
+
+    @Autowired
+    UrunMapper urunMapper;
+
     // Kaydetme -> Burada önemli olan bir nokta var, Id bilgirini girmemelisiniz
     public void save(Urun urun){
         repository.save(urun);
@@ -39,7 +46,7 @@ public class UrunService {
     }
 
     public Urun getById(long id){
-        Urun urun = repository.getById(id);
+        Urun urun = repository.findById(id).get();
         return urun;
     }
 
@@ -56,5 +63,15 @@ public class UrunService {
     public List<Urun> getUpperPrice(double fiyat){
         List<Urun> urunList = repository.findByFiyatGreaterThan(fiyat);
         return urunList;
+    }
+
+    public List<UrunResponseDto> findAllUrunResponse(){
+        List<UrunResponseDto> list = new ArrayList<>();
+        for (Urun urun: repository.findAll()) {
+            list.add(
+                    urunMapper.toResponseDto(urun)
+            );
+        }
+        return list;
     }
 }
