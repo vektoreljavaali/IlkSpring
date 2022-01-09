@@ -20,11 +20,12 @@
         </div>
 
         <!-- Login Form -->
-        <form action="/getlogin" method="post">
+        <form action="/login" method="post">
             <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
             <label th:text="${error}" style="color:red"></label>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+
         </form>
 
         <!-- Remind Passowrd -->

@@ -26,7 +26,7 @@
                         <form id="login-nav"
                               method="post"
                               role="form"
-                              action="/v1/users/save"
+                              action="/register"
                               class="form"
 
                         >
@@ -116,16 +116,18 @@
 
                             <!-- question group -->
                             <div class="form-group">
-                                <label class="sr-only">Questions</label>
+                                <label class="sr-only">Soru</label>
                                 <select id="reg_userquestion" class="form-control" name="user_question">
-                                    <option selected> Select Questions </option>
-                                    <option> value="What's favorite color?"</option>
+                                    <option selected> Sorunuzu Seçiniz </option>
+                                    <option value="1"> Favori Renginiz?</option>
+                                    <option value="2"> En sevdiğin öğretmen?</option>
+                                    <option value="3"> İlk Edindiğiniz Hayvan?</option>
                                 </select>
                             </div>
 
                             <!-- answer group -->
                             <div class="form-group">
-                                <label class="sr-only">Answer</label>
+                                <label class="sr-only">Cevap</label>
                                 <input type="text" id="reg_useranswer" name="user_answer" class="form-control" value="" placeholder="Your answers">
                             </div>
 
