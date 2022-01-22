@@ -1,4 +1,4 @@
-package com.vektorel.IlkSpring.controller;
+package com.vektorel.IlkSpring.mvccontroller;
 
 import com.vektorel.IlkSpring.repository.entity.User;
 import com.vektorel.IlkSpring.service.UserService;

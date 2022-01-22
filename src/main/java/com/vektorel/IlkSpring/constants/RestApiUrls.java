@@ -12,8 +12,10 @@ public class RestApiUrls {
     static
     String update;
 */
-    public static final String VERSION = "/v1";
+    public static final String VERSION = "/restapi";
     public static final String URUNCONTROLLER = "/urun";
+    public static final String URUNRESIMCONTROLLER = "/urunresim";
+    public static final String CATEGORYURUN = "/categoryurun";
     public static final String URUNCONTROLLER_ADDURUN= "/urun";
 
     public static final String SAVE = "/save";

@@ -7,22 +7,18 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "tblurun")
+@Table(name = "tblurunresimleri")
 @Entity
-public class Urun {
+public class UrunResimleri {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+    long urunid;
+    String url;
     String ad;
-    String aciklama;
-    double fiyat;
-    int miktar;
-    int kdv;
-    double kdvfiyat;
-    String onecikan_resim;
-    int state; // 0-pasif kayıt 1-aktif kayıt
+    int state;
 }

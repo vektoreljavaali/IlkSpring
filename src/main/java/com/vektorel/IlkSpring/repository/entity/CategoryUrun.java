@@ -11,18 +11,14 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tblurun")
+@Table(name = "tblcategoryurun")
 @Entity
-public class Urun {
+public class CategoryUrun {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
-    String ad;
-    String aciklama;
-    double fiyat;
-    int miktar;
-    int kdv;
-    double kdvfiyat;
-    String onecikan_resim;
-    int state; // 0-pasif kayıt 1-aktif kayıt
+    long categoryid;
+    long urunid;
+    int state;
 }
